@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="header.jsp" %>
 
-    <%
+<%
     String ra = request.getParameter("ra");
     String turma = request.getParameter("turma");
     String nome = request.getParameter("nome");
@@ -17,6 +17,7 @@
     String cidade = request.getParameter("cidade");
     String uf = request.getParameter("uf");
     String cep = request.getParameter("cep");
+    String id_endereco = request.getParameter("id_endereco");
 
     if (ra == null) {
         ra = "";
@@ -96,6 +97,24 @@
                 <label for="turma">Turma </label>
                 <input type="text" id="turma" name="turma" class="form-control" placeholder="Digite a turma" value="<%=turma%>">
             </div>
+            <!-- SELECT COISADO -->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="id_turma">Turma: </label>
+                    <select class="input" id="id_turma" name="id_turma">
+                        <option value="<%=turma%>">Nome da Turma</option>
+                    </select>
+                </div>
+            </div>
+            <input type="hidden" id="id" name="id" value="<%=id%>">
+            <!-- SELECT COISADO -->
+            <div class="form-group">
+                <label for="exampleFormControlSelect1" >Turma</label>
+                <select class="form-control" name="turma" id="exampleFormControlSelect1">
+                    <option value="<%=turma%>"></option>
+                </select>
+            </div>
+            <!-- SELECT COISADO --> 
             <div class="form-group col-md-6">
                 <label for="ra">Sexo: </label>
                 <div class="custom-control custom-radio custom-control-inline">
@@ -117,6 +136,7 @@
                     </label>
                 </div>
                 <input type="hidden" id="id" name="id" value="<%=id%>">
+                <input type="hidden" id="id_endereco" name="id_endereco" value="<%=id_endereco%>">
             </div>
         </div>
         <div class="titulo">
@@ -161,4 +181,5 @@
         </div>
     </form>
 </div>       
+
 <%@include file="footer.jsp" %>
