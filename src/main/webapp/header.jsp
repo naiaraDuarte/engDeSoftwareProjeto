@@ -43,4 +43,4 @@
         </div>
         <!--sidebar end-->
 
-        <div class="content">
+        <div class="content" style="height: 98vh;">
